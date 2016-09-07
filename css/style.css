@@ -1,0 +1,56 @@
+body {
+  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  width: 16rem;
+  height: 27rem;
+  margin: 0 auto;
+  background: #333; }
+
+.fuck {
+  min-width: 90%;
+  min-height: 100%;
+  margin: .5rem .5rem;
+  background: #fff; }
+
+.fuck form {
+  padding-top: .1rem; }
+
+.fuck form label {
+  font-size: .3rem;
+  line-height: .5rem;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: #999;
+  display: block; }
+
+#signupTxt {
+  font-size: 1rem;
+  width: 20%;
+  height: .5rem;
+  margin: 0 auto;
+  color: #000; }
+
+.fuck form img {
+  display: block;
+  width: 50%;
+  margin: 0 auto; }
+
+.fuck form input {
+  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: .6rem;
+  display: block;
+  width: 80%;
+  min-height: 1.3rem;
+  margin: .5rem auto;
+  padding-left: .2rem;
+  border: 1px solid #000; }
+
+.fuck form button {
+  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: 1rem;
+  display: block;
+  width: 80%;
+  height: 2rem;
+  margin: .5rem auto; }
+
+/*# sourceMappingURL=style.css.map */
