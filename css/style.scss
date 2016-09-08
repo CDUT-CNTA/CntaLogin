@@ -19,6 +19,7 @@ body
     margin: .5rem .5rem;
 
     background: #fff;
+    box-shadow: 0 .1rem .6rem #000;
 }
 
 .fuck form
@@ -30,13 +31,14 @@ body
     font-size: .3rem;
     line-height: .5rem;
 
+    display: block;
+
     width: 100%;
     margin: 0 auto;
 
     text-align: center;
 
     color: #999;
-    display: block;
 }
 #signupTxt
 {
@@ -68,6 +70,7 @@ body
     padding-left: .2rem;
 
     border: 1px solid #000;
+    border-radius: .2rem;
 }
 
 .fuck form button

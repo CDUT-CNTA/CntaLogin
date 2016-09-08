@@ -9,7 +9,8 @@ body {
   min-width: 90%;
   min-height: 100%;
   margin: .5rem .5rem;
-  background: #fff; }
+  background: #fff;
+  box-shadow: 0 .1rem .6rem #000; }
 
 .fuck form {
   padding-top: .1rem; }
@@ -17,11 +18,11 @@ body {
 .fuck form label {
   font-size: .3rem;
   line-height: .5rem;
+  display: block;
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  color: #999;
-  display: block; }
+  color: #999; }
 
 #signupTxt {
   font-size: 1rem;
@@ -43,7 +44,8 @@ body {
   min-height: 1.3rem;
   margin: .5rem auto;
   padding-left: .2rem;
-  border: 1px solid #000; }
+  border: 1px solid #000;
+  border-radius: .2rem; }
 
 .fuck form button {
   font-family: 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
