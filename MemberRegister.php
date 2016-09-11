@@ -8,14 +8,14 @@
     //传递变量如下：
     //学号    memStuID
     //姓名    memName
-    //性别    memSex
+    //性别    memSex  
     //院系    memDepart
     //QQ      memQQ
     //手机号码    memPhone
     //电子邮箱    memEmail
+    //加密密码    memPwd
     //其中会员的登陆密码默认为学号，登陆昵称默认为真实姓名
- 
-    //此处配置数据库连接信息，注意修改配置。
+
     $link = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
 
     if( !$link ){
@@ -69,7 +69,7 @@
 
     //向网站信息表中插入内容
     //此处存疑，具体是关于密码的保存方式以及加密过程。
-    $sql = "INSERT INTO `cnta-web-login`(`logEmail`, `logPwd`, `logName`, `logMemID`, `logStuID`, `logPhone`) VALUES ('".$_POST['memEmail']."','".$_POST['memStuID']."','".$_POST['memName']."','".$pass_mID."','".$_POST['memStuID']."','".$_POST['memPhone']."')";
+    $sql = "INSERT INTO `cnta-web-login`(`logEmail`, `logPwd`, `logName`, `logMemID`, `logStuID`, `logPhone`) VALUES ('".$_POST['memEmail']."','".$_POST['memPwd']."','".$_POST['memName']."','".$pass_mID."','".$_POST['memStuID']."','".$_POST['memPhone']."')";
     
     mysqli_query( $link, $sql);
 
