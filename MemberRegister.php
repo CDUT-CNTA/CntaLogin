@@ -14,8 +14,7 @@
     //手机号码    memPhone
     //电子邮箱    memEmail
     //其中会员的登陆密码默认为学号，登陆昵称默认为真实姓名
- 
-    //此处配置数据库连接信息，注意修改配置。
+
     $link = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
 
     if( !$link ){
