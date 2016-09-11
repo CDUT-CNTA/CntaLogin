@@ -22,9 +22,15 @@
         die("连接数据库失败</br>".mysqli_connect_error($link));
     }
 
+    // if (!isset($_POST['memStuID'])){
+    //     echo "信息传输失败，请重试。";
+    //     $link->close();
+    //     die();
+    // }
+
     //学号查重判断
     $sql = "SELECT `mID` FROM `cnta-member-2016` WHERE `mStuID` = '".$_POST['memStuID']."'";
-    
+
     if( !($res = mysqli_query( $link, $sql)) ){
         echo "数据库查询失败，请重试。";
         $link->close();
@@ -40,15 +46,15 @@
     }
     
     //性别转换为01存储
-    if($_POST['memSex'] != '1' || $_POST['memSex'] != '0'){
- //       Header("Location: RegisterFinished.php");
-        echo "性别传值错误。";
-        $link->close();
-        die();
-    }
+//     if($_POST['memSex'] != '1' && $_POST['memSex'] != '0'){
+//  //       Header("Location: RegisterFinished.php");
+//         echo "性别传值错误。";
+//         $link->close();
+//         die();
+//     }
     
     //向会员表中插入内容
-    $sql = "INSERT INTO `cnta-member-2016`(`mStuID`, `mName`, `mSex`, `mDepart`, `mQQ`, `mPhone`, `mEmail`) VALUES ('".$_POST['memStuID']."','".$_POST['memName']."','".$sexNum."','".$_POST['memDepart']."','".$_POST['memQQ']."','".$_POST['memPhone']."','".$_POST['memEmail']."')";
+    $sql = "INSERT INTO `cnta-member-2016`(`mStuID`, `mName`, `mSex`, `mDepart`, `mQQ`, `mPhone`, `mEmail`) VALUES ('".$_POST['memStuID']."','".$_POST['memName']."','".$_POST['memSex']."','".$_POST['memDepart']."','".$_POST['memQQ']."','".$_POST['memPhone']."','".$_POST['memEmail']."')";
     
     if ( !( $res = mysqli_query( $link, $sql)) ){
         echo "数据库操作失败，请重试。";
