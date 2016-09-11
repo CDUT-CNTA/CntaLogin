@@ -40,9 +40,11 @@
     }
     
     //性别转换为01存储
-    $sexNum = 0;
-    if($_POST['memSex'] == "男"){
-        $sexNum = 1;
+    if($_POST['memSex'] != '1' || $_POST['memSex'] != '0'){
+ //       Header("Location: RegisterFinished.php");
+        echo "性别传值错误。";
+        $link->close();
+        die();
     }
     
     //向会员表中插入内容
