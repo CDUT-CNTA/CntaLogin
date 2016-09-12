@@ -22,6 +22,13 @@
         die("连接数据库失败</br>".mysqli_connect_error($link));
     }
 
+    // 测试代码
+    // $file = fopen("testAjax.txt","w");
+    // $txt = $_POST['memStuID']."\n".$_POST['memName'];
+    // fwrite($file, $txt);
+    // fclose($file);
+
+
     // if (!isset($_POST['memStuID'])){
     //     echo "信息传输失败，请重试。";
     //     $link->close();
