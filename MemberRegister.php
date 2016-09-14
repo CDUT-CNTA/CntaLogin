@@ -52,13 +52,13 @@
         die();
     }
     
-    //性别转换为01存储
-//     if($_POST['memSex'] != '1' && $_POST['memSex'] != '0'){
-//  //       Header("Location: RegisterFinished.php");
-//         echo "性别传值错误。";
-//         $link->close();
-//         die();
-//     }
+    // 性别转换为01存储
+    if ( $_POST['memSex'] == '1' || $_POST['memSex'] == '0'){
+ //       Header("Location: RegisterFinished.php");
+        echo "性别传值错误。";
+        $link->close();
+        die();
+    }
     
     //向会员表中插入内容
     $sql = "INSERT INTO `cnta-member-2016`(`mStuID`, `mName`, `mSex`, `mDepart`, `mQQ`, `mPhone`, `mEmail`) VALUES ('".$_POST['memStuID']."','".$_POST['memName']."','".$_POST['memSex']."','".$_POST['memDepart']."','".$_POST['memQQ']."','".$_POST['memPhone']."','".$_POST['memEmail']."')";
