@@ -5,7 +5,7 @@
 define('DB_HOST', 'localhost');
 
 //用户名
-define('DB_USER', '');
+define('DB_USER', 'root');
 
 //口令
 define('DB_PASSWORD', '');
