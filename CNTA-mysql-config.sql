@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2016-09-12 13:22:14
+-- Generation Time: 2016-09-18 01:25:39
 -- 服务器版本： 5.5.48-log
 -- PHP Version: 5.6.22
 
@@ -66,7 +66,8 @@ CREATE TABLE IF NOT EXISTS `cnta-web-login` (
   `logName` varchar(25) NOT NULL,
   `logMemID` int(4) DEFAULT NULL,
   `logStuID` bigint(12) NOT NULL,
-  `logPhone` varchar(15) CHARACTER SET utf8 DEFAULT NULL
+  `logPhone` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
+  `emailConfirm` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
