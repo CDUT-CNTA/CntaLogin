@@ -22,19 +22,6 @@
         die("连接数据库失败</br>".mysqli_connect_error($link));
     }
 
-    // 测试代码
-    // $file = fopen("testAjax.txt","w");
-    // $txt = $_POST['memStuID']."\n".$_POST['memName'];
-    // fwrite($file, $txt);
-    // fclose($file);
-
-
-    // if (!isset($_POST['memStuID'])){
-    //     echo "信息传输失败，请重试。";
-    //     $link->close();
-    //     die();
-    // }
-
     //学号查重判断
     $sql = "SELECT `mID` FROM `cnta-member-2016` WHERE `mStuID` = '".$_POST['memStuID']."'";
 
@@ -43,7 +30,7 @@
         $link->close();
         die();
     }
-    
+        
     $check_StuID_repeat = mysqli_fetch_assoc( $res);
 
     if($check_StuID_repeat['mID']){
@@ -51,7 +38,41 @@
         $link->close();
         die();
     }
-    
+
+    //手机号查重判断
+    $sql = "SELECT `mID` FROM `cnta-member-2016` WHERE `mPhone` = '".$_POST['memPhone']."'";
+
+    if( !($res = mysqli_query( $link, $sql)) ){
+        echo "数据库查询失败，请重试。";
+        $link->close();
+        die();
+    }
+        
+    $check_Phone_repeat = mysqli_fetch_assoc( $res);
+
+    if($check_Phone_repeat['mID']){
+        echo "该手机号已注册，请勿重复注册。";
+        $link->close();
+        die();
+    }
+
+    //邮箱查重判断
+    $sql = "SELECT `mID` FROM `cnta-member-2016` WHERE `mEmail` = '".$_POST['memEmail']."'";
+
+    if( !($res = mysqli_query( $link, $sql)) ){
+        echo "数据库查询失败，请重试。";
+        $link->close();
+        die();
+    }
+        
+    $check_Email_repeat = mysqli_fetch_assoc( $res);
+
+    if($check_Email_repeat['mID']){
+        echo "该邮箱已注册，请勿重复注册。";
+        $link->close();
+        die();
+    }
+
     // 性别判断
     if ( $_POST['memSex'] == '1' || $_POST['memSex'] == '0'){
     //向会员表中插入内容
@@ -82,8 +103,7 @@
     $pass_mID = $row['mID'];
 
     //向网站信息表中插入内容
-    //此处存疑，具体是关于密码的保存方式以及加密过程。
-    $sql = "INSERT INTO `cnta-web-login`(`logEmail`, `logPwd`, `logName`, `logMemID`, `logStuID`, `logPhone`) VALUES ('".$_POST['memEmail']."','".$_POST['memPwd']."','".$_POST['memName']."','".$pass_mID."','".$_POST['memStuID']."','".$_POST['memPhone']."')";
+    $sql = "INSERT INTO `cnta-web-login`(`logEmail`, `logPwd`, `logName`, `logMemID`, `logStuID`, `logPhone`, `emailConfirm`) VALUES ('".$_POST['memEmail']."','".$_POST['memPwd']."','".$_POST['memName']."','".$pass_mID."','".$_POST['memStuID']."','".$_POST['memPhone']."','0')";
     
     mysqli_query( $link, $sql);
 
@@ -91,7 +111,7 @@
 
     mysqli_close( $link);
     
-    echo "恭喜你！计协会员信息注册成功，你现在已经是计协会员了，你可以使用你的邮箱登陆计协网站，默认密码是你的学号。祝你的大学生活快乐，O(∩_∩)O谢谢。";
+    echo "恭喜你！计协会员信息注册成功~"."\n"."现在你可以使用你的邮箱登陆计协网站，默认密码是你的手机号码。"."\n"."祝你的大学生活快乐，O(∩_∩)O谢谢。";
     
     die();
 
